@@ -15,7 +15,22 @@ You are logged-in as <strong>${ user.name }</strong>, with User ID <strong>${ us
 <div>
 <h2>What would you like to do?</h2>
 <ul>
-	<li><strong><a href="${pageContext.request.contextPath}/showSections">Enlist</a></strong></li>
+	
+<%-- 	<li><strong><a href="${pageContext.request.contextPath}/showSections">Enlist</a></strong></li>
+--%>
+
+<c:choose>
+	<c:when test="${ user.type =='ADMIN'}"> 
+	<li><strong><a href="${pageContext.request.contextPath}/showSections">Create Section</a></strong></li>
+	</c:when>
+	
+	<c:otherwise>
+	
+		<li><strong><a href="${pageContext.request.contextPath}/showSections">Enlist</a></strong></li>
+	</c:when> 
+</c:choose>
+
+
 </ul>
 </div>
 
