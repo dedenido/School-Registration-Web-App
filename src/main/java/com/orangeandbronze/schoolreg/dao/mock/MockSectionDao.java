@@ -20,7 +20,7 @@ public class MockSectionDao extends SectionDao {
 			put("CCC333", new Section("CCC333", new Subject("CS11")));
 			put("DDD444", new Section("DDD444", new Subject("PHILO1"), new Schedule(Days.TF, Period.PM4)));
 			put("EEE555", new Section("EEE555", new Subject("CS11")));
-			put("ZZZ000", new Section("ZZZ000", new Subject("CHEM11"), new Schedule(	Days.TF, Period.PM4)));
+			put("ZZZ888", new Section("ZZZ888", new Subject("CHEM11"), new Schedule(Days.TF, Period.PM4)));
 		}
 	};
 
