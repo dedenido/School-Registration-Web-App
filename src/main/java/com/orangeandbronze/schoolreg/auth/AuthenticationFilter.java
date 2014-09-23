@@ -36,7 +36,8 @@ public class AuthenticationFilter implements Filter {
 				return;
 			} else {
 				// instatiate a User and save to session
-				session.setAttribute("user", service.getUser(Integer.parseInt(userId)));			
+				session.setAttribute("user", service.getUser(Integer.parseInt(userId)));
+				//System.out.println(user.getName());
 			}			
 		}
 		chain.doFilter(request, response); // go to the original request

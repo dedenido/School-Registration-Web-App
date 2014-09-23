@@ -4,7 +4,7 @@ import com.orangeandbronze.schoolreg.domain.Enrollment;
 import com.orangeandbronze.schoolreg.domain.Student;
 import com.orangeandbronze.schoolreg.domain.Term;
 
-public class EnrollmentDao {
+public class EnrollmentDao extends Dao {
 
 	/** Should return a new Enrollment if none exists, or fetch an existing one. **/
 	public Enrollment getBy(Student student, Term term) {

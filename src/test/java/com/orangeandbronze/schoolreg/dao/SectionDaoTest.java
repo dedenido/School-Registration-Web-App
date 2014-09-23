@@ -55,6 +55,7 @@ public class SectionDaoTest extends DBTestCase {
 		assertEquals(expected.getSchedule(), actual.getSchedule());
 	}
 	
+	/** Only checks one level of prerequistes. Does not check nested prerequisties. **/
 	public void testGetByIdSubjectHasPrerequisites() {
 		SectionDao dao = new SectionDao();
 		Section actual = dao.getById("AAA111");

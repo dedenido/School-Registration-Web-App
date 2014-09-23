@@ -81,7 +81,7 @@ public class SectionDao extends Dao {
 			setPrivateKey(section, pk);
 
 		} catch (SQLException e) {
-			throw new DataAccessException("Something happend while trying to fetch Section data", e);
+			handleException(section, e);
 		}
 
 		return section;
@@ -94,7 +94,8 @@ public class SectionDao extends Dao {
 				+ "INNER JOIN subjects ON sections.fk_subject = subjects.pk " + "INNER JOIN faculty ON sections.fk_faculty = faculty.pk ";
 
 		Set<Section> sections = new HashSet<>();
-
+		Section currentSection = null;
+		
 		try (Connection conn = getConnection()) {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
@@ -121,14 +122,14 @@ public class SectionDao extends Dao {
 
 				String[] dayPeriod = scheduleString.split("\\s+");
 				Schedule schedule = dayPeriod.length > 1 ? new Schedule(Days.valueOf(dayPeriod[0]), Period.valueOf(dayPeriod[1])) : Schedule.TBA;
-				Section section = new Section(sectionNumber, subject, schedule, instructor);
-				setPrivateKey(section, pk);
+				currentSection = new Section(sectionNumber, subject, schedule, instructor);
+				setPrivateKey(currentSection, pk);
 
 				sections.add(new Section(sectionNumber, subject, schedule, instructor));
 			}
 
 		} catch (SQLException e) {
-			throw new DataAccessException("Something happend while trying to fetch Section data", e);
+			handleException(currentSection, e);
 		}
 
 		return sections;
