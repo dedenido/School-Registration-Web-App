@@ -12,38 +12,16 @@
 <div>
 You are logged-in as <strong>${ user.name }</strong>, with User ID <strong>${ user.userId }</strong> and type <strong>${ user.type }</strong>.
 </div>
-${ user.type }
-${ user.type == 'ADMIN'}
-${ user.type == 'STUDENT'}
+
 <div>
 <h2>What would you like to do?</h2>
 <ul>
-<<<<<<< HEAD
-	
-<%-- 	<li><strong><a href="${pageContext.request.contextPath}/showSections">Enlist</a></strong></li>
-
-
-<c:choose>
-	<c:when test="${ user.type =='ADMIN'}"> 
-	<li><strong><a href="${pageContext.request.contextPath}/showSections">Create Section</a></strong></li>
-	</c:when>
-	
-	<c:otherwise>
-	
-		<li><strong><a href="${pageContext.request.contextPath}/showSections">Enlist</a></strong></li>
-	</c:when> 
-</c:choose>
---%>
-
-
 	<c:if test="${user.type=='STUDENT'}">
 		<li><strong><a href="${pageContext.request.contextPath}/showSections">Enlist</a></strong></li>
 	</c:if>
 	<c:if test="${ user.type == 'ADMIN'}">
 		<li><strong><a href="${pageContext.request.contextPath}/showSections">Create a section</a></strong></li>
 	</c:if>
-
-
 </ul>
 </div>
 
