@@ -19,11 +19,15 @@ public class Dao {
 		}
 	}
 
-	Connection getConnection() throws SQLException {
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/school_registration", "root", "");
+	Connection getConnection() {
+		try {
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/school_registration", "root", "");
+		} catch (SQLException e) {
+			throw new DataAccessException("Problem while trying to get DB connection.", e);
+		}
 	}
 
-	void setPrivateKey(Entity entity, long pk) throws DataAccessException {
+	void setPrivateKey(Entity entity, long pk) {
 		try {
 			Field field = Section.class.getSuperclass().getDeclaredField("primaryKey");
 			field.setAccessible(true);
@@ -31,6 +35,10 @@ public class Dao {
 		} catch (ReflectiveOperationException e) {
 			throw new DataAccessException("Something happend setting " + entity.getClass() + " primary key via reflection.", e);
 		}
+	}
+	
+	void handleException(Entity entity, Exception e) {
+		throw new DataAccessException("Problem while accessing data for " + entity.getClass(), e);
 	}
 
 }
