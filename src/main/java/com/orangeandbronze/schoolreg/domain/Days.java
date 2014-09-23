@@ -2,9 +2,9 @@ package com.orangeandbronze.schoolreg.domain;
 
 public enum Days {
 	
-	MTH("Monday/Thursday", "MTH"),
-	TF("Tuesday/Friday", "TF"),
-	WS("Wednesday/Saturday", "WS");
+	MTH("Mon/Thu", "MTH"),
+	TF("Tue/Fri", "TF"),
+	WS("Wed/Sat", "WS");
 	//MTH, TF, WS
 	
 	private String dayName;
