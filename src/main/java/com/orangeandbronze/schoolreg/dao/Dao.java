@@ -19,11 +19,11 @@ public class Dao {
 		}
 	}
 
-	protected Connection getConnection() throws SQLException {
+	Connection getConnection() throws SQLException {
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/school_registration", "root", "");
 	}
 
-	protected void setPrivateKey(Entity entity, long pk) throws DataAccessException {
+	void setPrivateKey(Entity entity, long pk) throws DataAccessException {
 		try {
 			Field field = Section.class.getSuperclass().getDeclaredField("primaryKey");
 			field.setAccessible(true);
