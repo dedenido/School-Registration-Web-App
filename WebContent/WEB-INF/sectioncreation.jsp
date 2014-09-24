@@ -17,7 +17,12 @@ Teacher :
 		<option value="faculty">${ faculty }</option>
 		</c:forEach>
 	</select> <br>
-Subject : <input type = "text" name = "subject">
+Subject : 
+	<select name="subject">
+		<c:forEach var="subject" items="${subject}">
+		<option value="subject">${subject}</option>
+		</c:forEach>
+	</select> <br>
 Subject Prerequisite : <input type = "text" name = "subjectprerequisite">
 Schedule : <input type = "text" name = "schedule">
 <input type = "submit" value = "Isummite">
