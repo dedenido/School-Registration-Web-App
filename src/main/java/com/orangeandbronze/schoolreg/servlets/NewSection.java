@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.orangeandbronze.schoolreg.auth.User;
+import com.orangeandbronze.schoolreg.service.EnlistService.EnlistmentResult;
+
 /**
  * Servlet implementation class NewSection
  */
@@ -24,31 +27,32 @@ public class NewSection extends HttpServlet {
 		// TODO Auto-generated method stub
 	
 //		HttpSession session = request.getSession();
-//		
-//		String sectionName = (String)session.getAttribute("section");
-//		String teacher = (String)session.getAttribute("teacher");
-//		String subject = (String)session.getAttribute("subject");
-//		String subjectprerequisite = (String)session.getAttribute("subprerequisite");
-//		String schedule = (String)session.getAttribute("schedule");
-		
+//		Integer studentNumber = ((User) session.getAttribute("user")).getUserId();
+
 		String sectionName = request.getParameter("sectionname");
-		String teacher = request.getParameter("teacher");
+//		String faculty = request.getParameter("teacher");
 		String subject = request.getParameter("subject");
-		String subjectPrerequisite = request.getParameter("subjectprerequisite");
-		String schedule = request.getParameter("schedule");
+		String days = request.getParameter("days");
+		String period = request.getParameter("period");
 		
 		
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		writer.println(sectionName + " was successfully added with the following details: " );
-		writer.println("Teacher: " + teacher);
+		writer.println("Teacher: " + request.getParameter("teacher"));
 		writer.println("Subject: " + subject);
-		writer.println("subjectprerequisite: " + subjectPrerequisite);
-		writer.println("Schedule" + schedule);
+		writer.println("Schedule: " + days + " " + period);
 		
 		writer.flush();
 	
-	
+//	
+//		session.setAttribute("result", result);
+//		response.sendRedirect(getServletContext().getContextPath() + "/enlistmentResult.jsp");
+//			
+//		}
+		
+		
+		
 	}
 
 }
