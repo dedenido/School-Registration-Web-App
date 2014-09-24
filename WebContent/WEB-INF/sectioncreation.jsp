@@ -32,10 +32,6 @@ Subject :
 
 	</select> <br>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a1c9d743673c339d6dca7aae0f572530d0f87bcb
 Schedule : <br>
      Day :
 	 <select name="days">
@@ -50,11 +46,7 @@ Schedule : <br>
 	   <option value = "period">${period.timePeriod}</option>
 	   </c:forEach> 
 	</select> <br>
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> a1c9d743673c339d6dca7aae0f572530d0f87bcb
 <input type = "submit" value = "Submit">
 
 </form>
