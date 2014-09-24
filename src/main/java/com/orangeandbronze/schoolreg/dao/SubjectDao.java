@@ -7,31 +7,32 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.orangeandbronze.schoolreg.domain.Faculty;
 
-public class FacultyDao extends Dao {
+import com.orangeandbronze.schoolreg.domain.Subject;
+
+public class SubjectDao extends Dao {
 	
-	public List<Faculty> getAll() {
-		List<Faculty> facultyList = new ArrayList<Faculty>();
-		Faculty faculty = null;
-		String sql = "SELECT * FROM faculty";
+	public List<Subject> getAll() {
+		List<Subject> subjectList = new ArrayList<Subject>();
+		Subject subject = null;
+		String sql = "SELECT * FROM subjects";
 		
 		try (Connection conn = getConnection()) {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 			
 			while (rs.next()) {
-				faculty = new Faculty(rs.getInt("faculty_number"));
-				facultyList.add(faculty);
+				subject = new Subject(rs.getString("subject_id"));
+				subjectList.add(subject);
 
 			}
 		}
 		
 		catch (SQLException e) {
-			handleException(faculty, e);
+			handleException(subject, e);
 		}
 		
-		return facultyList;
+		return subjectList;
 	}
 
 }

@@ -15,20 +15,24 @@ Section Name: <input type = "text" name = "sectionname"> <br>
 <!-- Teacher : <input type = "text" name = "teacher"> <br> -->
 Teacher : 
 	<select name="teacher">
-<<<<<<< HEAD
-
 	<option value="teacher">${faculty}</option>
-
-=======
 		<c:forEach var="faculty" items="${faculty}">
-		<option value="faculty">${ faculty }</option>
+		<option value="faculty">${ faculty}</option>
 		</c:forEach>
->>>>>>> aa12a7d301aeb4d74945b6d446dd4d4a37074013
 	</select> <br>
 	
 
 
-Subject : <input type = "text" name = "subject"> <br>
+<!-- Subject : <input type = "text" name = "subject"> <br> -->
+Subject : 
+	<select name="subject">
+	<option value="subject">${subject}</option>
+		<c:forEach var="subject" items="${subject}">
+		<option value="subject">${ subject}</option>
+		</c:forEach>
+
+	</select> <br>
+
 Subject Prerequisite : <input type = "text" name = "subjectprerequisite"> <br>
 
 <!-- Schedule : <input type = "text" name = "schedule"> <br> -->

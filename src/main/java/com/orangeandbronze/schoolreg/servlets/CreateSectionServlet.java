@@ -28,6 +28,7 @@ public class CreateSectionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setAttribute("faculty", service.getAllFaculty());
+		request.setAttribute("subject", service.getAllSubjects());
 		getServletContext().getRequestDispatcher("/WEB-INF/sectioncreation.jsp").forward(request, response);
 
 	}
