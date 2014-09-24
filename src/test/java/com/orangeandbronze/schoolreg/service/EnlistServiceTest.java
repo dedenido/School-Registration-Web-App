@@ -50,6 +50,8 @@ public class EnlistServiceTest {
 		final Enrollment previousEnrollment = new Enrollment(100, student, Term.Y2012_1ST, previousSections);
 		failedToEnlist.put(aaa111, "Missing prerequisite/s.");
 		
+		
+		
 		/* Mock the daos */
 		StudentDao studentDao = mock(StudentDao.class);
 		when(studentDao.getById(studentNumber)).thenReturn(student);

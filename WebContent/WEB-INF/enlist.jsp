@@ -20,7 +20,7 @@
 			<tr><td><input type="checkbox" name="sectionNumber"
 					value="${section.sectionNumber }"></td><td>${section.sectionNumber }</td><td>${section.subject.subjectId }</td><td>${section.schedule.days } ${section.schedule.period }</td></tr>
 				
-		</c:forEach>
+			</c:forEach>
 		</table>
 		<div>
 			<input type="submit" value="Submit">
