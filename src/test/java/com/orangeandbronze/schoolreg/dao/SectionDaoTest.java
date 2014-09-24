@@ -43,6 +43,7 @@ public class SectionDaoTest extends DBTestCase {
 		};
 		SectionDao dao = new SectionDao();
 		assertEquals(expected, dao.getAll());
+		
 	}
 	
 	public void testGetByIdSubjectNoPrerequisites() {
