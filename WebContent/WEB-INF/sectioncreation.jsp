@@ -13,8 +13,9 @@
 Section Name: <input type = "text" name = "sectionname"> <br>
 Teacher : 
 	<select name="teacher">
-	<option value="volvo">${ faculty }</option>
-	<option value="saab">Saab</option>
+		<c:forEach var="faculty" items="${faculty}">
+		<option value="faculty">${ faculty }</option>
+		</c:forEach>
 	</select> <br>
 Subject : <input type = "text" name = "subject">
 Subject Prerequisite : <input type = "text" name = "subjectprerequisite">
