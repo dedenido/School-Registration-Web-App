@@ -29,6 +29,8 @@ public class CreateSectionServlet extends HttpServlet {
 		
 		request.setAttribute("faculty", service.getAllFaculty());
 		request.setAttribute("subject", service.getAllSubjects());
+		request.setAttribute("days", service.getAllDays());
+		request.setAttribute("period", service.getAllPeriod());
 		getServletContext().getRequestDispatcher("/WEB-INF/sectioncreation.jsp").forward(request, response);
 
 	}
