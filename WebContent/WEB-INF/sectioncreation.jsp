@@ -12,29 +12,25 @@
 <form action = "newSection" method = "post">
 Section Name: <input type = "text" name = "sectionname"> <br>
 
-<!-- Teacher : <input type = "text" name = "teacher"> <br> -->
 Teacher : 
 	<select name="teacher">
-	<option value="teacher">${faculty}</option>
 		<c:forEach var="faculty" items="${faculty}">
 		<option value="faculty">${ faculty}</option>
 		</c:forEach>
 	</select> <br>
 	
 
-
-<!-- Subject : <input type = "text" name = "subject"> <br> -->
 Subject : 
 	<select name="subject">
-	<option value="subject">${subject}</option>
 		<c:forEach var="subject" items="${subject}">
 		<option value="subject">${ subject}</option>
 		</c:forEach>
 
 	</select> <br>
 
-Subject Prerequisite : <input type = "text" name = "subjectprerequisite"> <br>
-
+<!-- Subject Prerequisite : <input type = "text" name = "subjectprerequisite"> <br> -->
+<!-- Teacher : <input type = "text" name = "teacher"> <br> -->
+<!-- Subject : <input type = "text" name = "subject"> <br> -->
 <!-- Schedule : <input type = "text" name = "schedule"> <br> -->
 
 Schedule :
