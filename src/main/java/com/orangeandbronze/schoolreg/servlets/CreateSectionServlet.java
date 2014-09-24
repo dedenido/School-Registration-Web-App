@@ -17,14 +17,17 @@ import com.orangeandbronze.schoolreg.service.EnlistService;
  */
 @WebServlet("/createSection")
 public class CreateSectionServlet extends HttpServlet {
+	
+	private CreateSectionService service = new CreateSectionService();
+	
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-//		getServletContext().getRequestDispatcher("/WEB-INF/sectioncreation.jsp").forward(request, response);
+		
+		request.setAttribute("faculty", service.getAllFaculty());
 		getServletContext().getRequestDispatcher("/WEB-INF/sectioncreation.jsp").forward(request, response);
 
 	}

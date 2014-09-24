@@ -13,7 +13,7 @@
 Section Name: <input type = "text" name = "sectionname"> <br>
 Teacher : 
 	<select name="teacher">
-	<option value="volvo">Volvo</option>
+	<option value="volvo">${ faculty }</option>
 	<option value="saab">Saab</option>
 	</select> <br>
 Subject : <input type = "text" name = "subject">
