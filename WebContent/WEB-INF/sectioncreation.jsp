@@ -25,7 +25,7 @@ Teacher :
 	
 
 Subject : 
-	<select name="subject">
+	<select name="subjects">
 		<c:forEach var="subject" items="${subject}">
 		<option value="subject">${subject}</option>
 		</c:forEach>
