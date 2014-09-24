@@ -45,9 +45,12 @@ public class Faculty extends Entity {
 
 	@Override
 	public String toString() {
-		return "Faculty [facultyNumber=" + facultyNumber + "]";
+		return "Faculty #" + facultyNumber;
 	}
 	
+	public int getFacultyNumber() {
+		return facultyNumber;
+	}
 	
 
 }

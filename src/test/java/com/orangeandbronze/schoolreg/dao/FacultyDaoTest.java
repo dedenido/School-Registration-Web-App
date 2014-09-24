@@ -1,10 +1,20 @@
 package com.orangeandbronze.schoolreg.dao;
 
+import static org.junit.Assert.assertNotNull;
+
+import java.io.FileReader;
+import java.util.List;
+
 import org.dbunit.DBTestCase;
 import org.dbunit.PropertiesBasedJdbcDatabaseTester;
 import org.dbunit.dataset.IDataSet;
+import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+
+import com.orangeandbronze.schoolreg.domain.Faculty;
 
 public class FacultyDaoTest extends DBTestCase {
+	
+	private FacultyDao facultyDao;
 
 	public FacultyDaoTest() {
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS,"com.mysql.jdbc.Driver");
@@ -15,12 +25,19 @@ public class FacultyDaoTest extends DBTestCase {
 	
 	public void testGetAll() {
 		FacultyDao dao = new FacultyDao();
+		List<Faculty> facultyList = dao.getAll();
+		
 		assertNotNull(dao.getAll());
+		assertNotNull(facultyList.size());
+	
 	}
 
 	@Override
 	protected IDataSet getDataSet() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return new FlatXmlDataSetBuilder().build(new FileReader("src/test/SectionDaoTest.xml"));
 	}
+	
+//	public void testConnection() {
+//		assertNotNull(System.getProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL));
+//	}
 }

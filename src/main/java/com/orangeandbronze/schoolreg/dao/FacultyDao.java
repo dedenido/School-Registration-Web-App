@@ -21,9 +21,10 @@ public class FacultyDao extends Dao {
 			ResultSet rs = pstmt.executeQuery();
 			
 			while (rs.next()) {
-				faculty = new Faculty(rs.getInt(1));
+				faculty = new Faculty(rs.getInt("faculty_number"));
 				facultyList.add(faculty);
-				System.out.println(faculty.toString());
+				System.out.println(faculty.getFacultyNumber());
+				System.out.println(facultyList.get(0));
 			}
 		}
 		
