@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.orangeandbronze.schoolreg.domain.Days;
 import com.orangeandbronze.schoolreg.service.CreateSectionService;
-import com.orangeandbronze.schoolreg.service.EnlistService;
+
 
 /**
  * Servlet implementation class CreateSectionServlet
@@ -29,10 +30,11 @@ public class CreateSectionServlet extends HttpServlet {
 		
 		request.setAttribute("faculty", service.getAllFaculty());
 		request.setAttribute("subject", service.getSubjects());
-
+		request.setAttribute("subject", service.getAllSubjects());
+		request.setAttribute("days", service.getAllDays());
+		request.setAttribute("period", service.getAllPeriod());
 		getServletContext().getRequestDispatcher("/WEB-INF/sectioncreation.jsp").forward(request, response);
 
 	}
-		
-
+	
 }

@@ -20,8 +20,10 @@ import com.orangeandbronze.schoolreg.domain.Term;
 
 public class EnlistService {
 
-	private StudentDao studentDao = new MockStudentDao();
-	private SectionDao sectionDao = new MockSectionDao();
+//	private StudentDao studentDao = new MockStudentDao();
+//	private SectionDao sectionDao = new MockSectionDao();
+	private StudentDao studentDao = new StudentDao();
+	private SectionDao sectionDao = new SectionDao();
 	private EnrollmentDao enrollmentDao = new MockEnrollmentDao();
 	
 	public Set<Section> getAllSections() {

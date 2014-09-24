@@ -40,7 +40,7 @@ public class NewSection extends HttpServlet {
 		
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
-		writer.println(sectionName + "successfully added with the following details" );
+		writer.println(sectionName + " was successfully added with the following details: " );
 		writer.println("Teacher: " + teacher);
 		writer.println("Subject: " + subject);
 		writer.println("subjectprerequisite: " + subjectPrerequisite);

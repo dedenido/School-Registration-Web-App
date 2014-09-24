@@ -5,6 +5,7 @@ public enum Days {
 	MTH("Mon/Thu", "MTH"),
 	TF("Tue/Fri", "TF"),
 	WS("Wed/Sat", "WS");
+	
 	//MTH, TF, WS
 	
 	private String dayName;

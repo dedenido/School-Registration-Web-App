@@ -23,6 +23,7 @@ public class SubjectDao extends Dao {
 			while (rs.next()) {
 				subject = new Subject(rs.getString("subject_id"));
 				subjectList.add(subject);
+
 			}
 		}
 		
@@ -34,3 +35,4 @@ public class SubjectDao extends Dao {
 	}
 
 }
+
