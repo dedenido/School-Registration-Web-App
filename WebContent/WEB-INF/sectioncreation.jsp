@@ -9,6 +9,10 @@
 </head>
 <body>
 
+<div>You are logged in as ${ user.name }, with User ID ${ user.userId }
+	and type ${ user.type }.</div>
+<h1>Create Sections</h1>
+
 <form action = "newSection" method = "post">
 Section Name: <input type = "text" name = "sectionname"> <br>
 
@@ -28,32 +32,22 @@ Subject :
 
 	</select> <br>
 
-<!-- Subject Prerequisite : <input type = "text" name = "subjectprerequisite"> <br> -->
-<!-- Teacher : <input type = "text" name = "teacher"> <br> -->
-<!-- Subject : <input type = "text" name = "subject"> <br> -->
-<!-- Schedule : <input type = "text" name = "schedule"> <br> -->
 
 Schedule : <br>
      Day :
 	 <select name="days">
 	   <c:forEach var = "days" items = "${days}">
-	   <option value = "days">${days}</option>
+	   <option value = "days">${days.dayName}</option>
 	   </c:forEach> 
 	</select> 
 	
 	 Period :
 	 <select name="period">
 	   <c:forEach var = "period" items = "${period}">
-	   <option value = "period">${period}</option>
+	   <option value = "period">${period.timePeriod}</option>
 	   </c:forEach> 
 	</select> <br>
 	
-</form>
-
-
-
-
-<!-- Schedule : <input type = "text" name = "schedule"> -->
 <input type = "submit" value = "Submit">
 
 </form>
