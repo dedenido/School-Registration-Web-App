@@ -11,10 +11,18 @@
 
 <form action = "newSection" method = "post">
 Section Name: <input type = "text" name = "sectionname"> <br>
-Teacher : <input type = "text" name = "teacher">
-Subject : <input type = "text" name = "subject">
-Subject Prerequisite : <input type = "text" name = "subjectprerequisite">
-Schedule : <input type = "text" name = "schedule">
+Teacher : <input type = "text" name = "teacher"> <br>
+Subject : <input type = "text" name = "subject"> <br>
+Subject Prerequisite : <input type = "text" name = "subjectprerequisite"> <br>
+<!-- Schedule : <input type = "text" name = "schedule"> <br> -->
+
+Schedule :
+<select name="schedule">
+<option value="blank"> </option>
+<option value="schedule">Please enter valid Schedule</option>
+</select>
+</form>
+
 <input type = "submit" value = "Isummite">
 </form>
 
