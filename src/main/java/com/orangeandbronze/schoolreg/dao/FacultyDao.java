@@ -23,8 +23,8 @@ public class FacultyDao extends Dao {
 			while (rs.next()) {
 				faculty = new Faculty(rs.getInt("faculty_number"));
 				facultyList.add(faculty);
-				System.out.println(faculty.getFacultyNumber());
-				System.out.println(facultyList.get(0));
+//				System.out.println(faculty.getFacultyNumber());
+//				System.out.println(facultyList.get(0));
 			}
 		}
 		

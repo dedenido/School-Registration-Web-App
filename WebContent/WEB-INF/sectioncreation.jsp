@@ -15,10 +15,12 @@ Section Name: <input type = "text" name = "sectionname"> <br>
 <!-- Teacher : <input type = "text" name = "teacher"> <br> -->
 Teacher : 
 	<select name="teacher">
-	<option value="teacher ">Teacher value</option>
+
+	<option value="teacher">${faculty}</option>
 
 	</select> <br>
 	
+
 
 Subject : <input type = "text" name = "subject"> <br>
 Subject Prerequisite : <input type = "text" name = "subjectprerequisite"> <br>

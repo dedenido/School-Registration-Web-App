@@ -10,21 +10,24 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.orangeandbronze.schoolreg.service.CreateSectionService;
-import com.orangeandbronze.schoolreg.service.EnlistService;
+
 
 /**
  * Servlet implementation class CreateSectionServlet
  */
 @WebServlet("/createSection")
 public class CreateSectionServlet extends HttpServlet {
+	
+	private CreateSectionService service = new CreateSectionService();
+	
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-//		getServletContext().getRequestDispatcher("/WEB-INF/sectioncreation.jsp").forward(request, response);
+		
+		request.setAttribute("faculty", service.getAllFaculty());
 		getServletContext().getRequestDispatcher("/WEB-INF/sectioncreation.jsp").forward(request, response);
 
 	}
