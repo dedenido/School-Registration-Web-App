@@ -17,13 +17,13 @@ Subject Prerequisite : <input type = "text" name = "subjectprerequisite"> <br>
 <!-- Schedule : <input type = "text" name = "schedule"> <br> -->
 
 Schedule :
-<select name="schedule">
-<option value="blank"> </option>
-<option value="schedule">Please enter valid Schedule</option>
-</select>
+	<select name="schedule">
+	<option value="blank"> </option>
+	<option value="schedule">Please enter valid Schedule</option>
+	</select>
 </form>
 
-<input type = "submit" value = "Isummite">
+<input type = "submit" value = "Submit">
 </form>
 
 </body>
