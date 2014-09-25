@@ -24,16 +24,26 @@ public class NewSection extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	
-		HttpSession session = request.getSession();
 
+
+	// TODO Auto-generated method stub
+	
+
+<<<<<<< HEAD
 		String sectionName = (String)request.getAttribute("sectionname");
 		String faculty = (String)request.getAttribute("teacher");
 		String subject = (String)request.getAttribute("subject");
 		String days = (String)request.getAttribute("days");
 		String period = (String)request.getAttribute("period");
 			
+=======
+		String sectionName = request.getParameter("sectionName");
+		String faculty = request.getParameter("teacher");
+		String subject = request.getParameter("subject");
+		String days = request.getParameter("days");
+		String period = request.getParameter("period");
+
+>>>>>>> b3ab69ccd2f2a489ec30055d3ccaa526d89d5a4d
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		writer.println(sectionName + " was successfully added with the following details: " );
@@ -43,13 +53,6 @@ public class NewSection extends HttpServlet {
 		
 		writer.flush();
 	
-//	
-//		session.setAttribute("result", result);
-//		response.sendRedirect(getServletContext().getContextPath() + "/enlistmentResult.jsp");
-//			
-//		}
-		
-		
 		
 	}
 

@@ -18,10 +18,10 @@ You are logged-in as <strong>${ user.name }</strong>, with User ID <strong>${ us
 <h2>What would you like to do?</h2>
 <ul>
 
-	<c:if test="${user.type=='STUDENT'}">
+	<c:if test="${user.type =='STUDENT'}">
 		<li><strong><a href="${pageContext.request.contextPath}/showSections">Enlist</a></strong></li>
 	</c:if>
-	<c:if test="${ user.type == 'ADMIN'}">
+	<c:if test="${user.type == 'ADMIN'}">
 		<li><strong><a href="${pageContext.request.contextPath}/createSection">Create a section</a></strong></li>
 	</c:if>
 </ul>

@@ -1,15 +1,12 @@
 package com.orangeandbronze.schoolreg.servlets;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.orangeandbronze.schoolreg.domain.Days;
 import com.orangeandbronze.schoolreg.service.CreateSectionService;
 
 
@@ -24,15 +21,10 @@ public class CreateSectionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		String sectionName = request.getParameter("sectionname");
-//		String faculty = request.getParameter("teacher");
-//		String subject = request.getParameter("subject");
-//		String days = request.getParameter("days");
-//		String period = request.getParameter("period");
 		
 		HttpSession session = request.getSession();
 		
@@ -43,5 +35,6 @@ public class CreateSectionServlet extends HttpServlet {
 		getServletContext().getRequestDispatcher("/WEB-INF/sectioncreation.jsp").forward(request, response);
 
 	}
+
 	
 }
