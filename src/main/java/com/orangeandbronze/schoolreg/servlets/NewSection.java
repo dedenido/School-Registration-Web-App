@@ -25,22 +25,16 @@ public class NewSection extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	// TODO Auto-generated method stub
 	
-//		HttpSession session = request.getSession();
-//		Integer studentNumber = ((User) session.getAttribute("user")).getUserId();
 
-
-		String sectionName = request.getParameter("sectionname");
+		String sectionName = request.getParameter("sectionName");
 		String faculty = request.getParameter("teacher");
 		String subject = request.getParameter("subject");
 		String days = request.getParameter("days");
 		String period = request.getParameter("period");
-		
 
-		
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		writer.println(sectionName + " was successfully added with the following details: " );
@@ -50,13 +44,6 @@ public class NewSection extends HttpServlet {
 		
 		writer.flush();
 	
-//	
-//		session.setAttribute("result", result);
-//		response.sendRedirect(getServletContext().getContextPath() + "/enlistmentResult.jsp");
-//			
-//		}
-		
-		
 		
 	}
 

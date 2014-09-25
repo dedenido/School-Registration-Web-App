@@ -15,7 +15,7 @@
 
 <form action = "newSection" method = "post">
 
-Section Name: <input type = "text" name = "sectionname"> <br>
+Section Name: <input type = "text" name = "sectionName"> <br>
 
 Teacher : 
 	<select name="teacher">
@@ -33,7 +33,6 @@ Subject :
 
 	</select> <br>
 
-
 Schedule : <br>
      Day :
 	 <select name="days">
@@ -48,7 +47,7 @@ Schedule : <br>
 	   <option value = ${period}>${period.timePeriod}</option>
 	   </c:forEach> 
 	</select> <br>
-	
+
 <input type = "submit" value = "Submit">
 
 </form>
