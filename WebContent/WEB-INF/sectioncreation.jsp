@@ -17,6 +17,7 @@
 
 Section Name: <input type = "text" name = "sectionName"> <br>
 
+
 Teacher : 
 	<select name="teacher">
 		<c:forEach var="faculty" items="${faculty}">
