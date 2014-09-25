@@ -24,22 +24,27 @@ public class NewSection extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	// TODO Auto-generated method stub
 	
 //		HttpSession session = request.getSession();
 //		Integer studentNumber = ((User) session.getAttribute("user")).getUserId();
 
+
 		String sectionName = request.getParameter("sectionname");
-//		String faculty = request.getParameter("teacher");
+		String faculty = request.getParameter("teacher");
 		String subject = request.getParameter("subject");
 		String days = request.getParameter("days");
 		String period = request.getParameter("period");
 		
+
 		
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		writer.println(sectionName + " was successfully added with the following details: " );
-		writer.println("Teacher: " + request.getParameter("teacher"));
+		writer.println("Teacher: " + faculty);
 		writer.println("Subject: " + subject);
 		writer.println("Schedule: " + days + " " + period);
 		

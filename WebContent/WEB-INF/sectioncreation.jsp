@@ -11,15 +11,16 @@
 
 <div>You are logged in as ${ user.name }, with User ID ${ user.userId }
 	and type ${ user.type }.</div>
-<h1>Create Sections</h1>
+<h1>Create Section</h1>
 
 <form action = "newSection" method = "post">
+
 Section Name: <input type = "text" name = "sectionname"> <br>
 
 Teacher : 
 	<select name="teacher">
 		<c:forEach var="faculty" items="${faculty}">
-		<option value="faculty">${faculty}</option>
+		<option value="${faculty}">${faculty}</option>
 		</c:forEach>
 	</select> <br>
 	
@@ -27,7 +28,7 @@ Teacher :
 Subject : 
 	<select name="subject">
 		<c:forEach var="subject" items="${subject}">
-		<option value="subject">${subject}</option>
+		<option value="${subject}">${subject}</option>
 		</c:forEach>
 
 	</select> <br>
@@ -37,14 +38,14 @@ Schedule : <br>
      Day :
 	 <select name="days">
 	   <c:forEach var = "days" items = "${days}">
-	   <option value = "days">${days.dayName}</option>
+	   <option value = ${days}>${days.dayName}</option>
 	   </c:forEach> 
 	</select> 
 	
 	 Period :
 	 <select name="period">
 	   <c:forEach var = "period" items = "${period}">
-	   <option value = "period">${period.timePeriod}</option>
+	   <option value = ${period}>${period.timePeriod}</option>
 	   </c:forEach> 
 	</select> <br>
 	

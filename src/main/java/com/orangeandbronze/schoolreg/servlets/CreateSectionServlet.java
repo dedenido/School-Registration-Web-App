@@ -1,6 +1,7 @@
 package com.orangeandbronze.schoolreg.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +24,7 @@ public class CreateSectionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -34,6 +35,6 @@ public class CreateSectionServlet extends HttpServlet {
 		getServletContext().getRequestDispatcher("/WEB-INF/sectioncreation.jsp").forward(request, response);
 
 	}
-		
 
+	
 }
