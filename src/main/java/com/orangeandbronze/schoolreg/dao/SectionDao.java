@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -134,5 +135,20 @@ public class SectionDao extends Dao {
 
 		return sections;
 	}
+	
+//	public Section createSection(String sectionNumber, Subject subject, Schedule schedule, Faculty instructor) throws SQLException {
+//		Statement stmt = null; 
+//		
+//		Connection conn;
+//		
+//		String sql = "INSERT INTO section (sectionNumber, fk_subject, fk_faculty, schedule) VALUES (" + sectionNumber + ", " + subject + 
+//						", " + schedule + ", " + 
+//
+//		stmt = conn.createStatement();
+//		stmt.executeUpdate(SQL);
+//		
+//		Section section = new Section(sectionId, sectionName);
+//		return section;
+//	}
 
 }
