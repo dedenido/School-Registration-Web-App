@@ -33,8 +33,7 @@ public class NewSection extends HttpServlet {
 		String subject = (String)request.getAttribute("subject");
 		String days = (String)request.getAttribute("days");
 		String period = (String)request.getAttribute("period");
-		
-		
+			
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		writer.println(sectionName + " was successfully added with the following details: " );
