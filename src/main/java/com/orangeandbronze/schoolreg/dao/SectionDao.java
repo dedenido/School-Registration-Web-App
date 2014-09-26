@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.orangeandbronze.schoolreg.domain.Days;
@@ -134,6 +136,41 @@ public class SectionDao extends Dao {
 		}
 
 		return sections;
+	}
+	
+	public boolean checkIfExists(String sectionNumber, String subject, String schedule, int faculty) throws SQLException {
+		
+		boolean exists = false;
+		
+		String SQL = "SELECT * FROM sections INNER JOIN subjects on sections.fk_subject = subjects.pk " + 
+						"INNER JOIN faculty on sections.fk_faculty = faculty.pk " + 
+						"WHERE sections.section_number = \'?\' " +
+						"and subjects.subject_id = \'?\' " +
+						"and faculty.faculty_number = ? " +
+						"and schedule = \'?\'";
+		
+		try {
+			Connection conn = getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, sectionNumber);
+			pstmt.setString(2, subject);
+			pstmt.setInt(3, faculty);
+			pstmt.setString(4, schedule);
+			ResultSet rs = pstmt.executeQuery(SQL);
+			
+			if (rs.next()) {
+				exists = true;
+				System.out.println("Section exists");
+			} else {
+				exists = false;
+				System.out.println("Section does not exist");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		return exists;
 	}
 	
 //	public Section createSection(String sectionNumber, Subject subject, Schedule schedule, Faculty instructor) throws SQLException {

@@ -21,7 +21,7 @@ Section Name: <input type = "text" name = "sectionName"> <br>
 Teacher : 
 	<select name="teacher">
 		<c:forEach var="faculty" items="${faculty}">
-		<option value="${faculty}">${faculty}</option>
+		<option value="${faculty.facultyNumber}">${faculty}</option>
 		</c:forEach>
 	</select> <br>
 	

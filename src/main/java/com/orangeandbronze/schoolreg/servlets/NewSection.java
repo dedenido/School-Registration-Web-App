@@ -2,6 +2,7 @@ package com.orangeandbronze.schoolreg.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import com.orangeandbronze.schoolreg.auth.User;
 import com.orangeandbronze.schoolreg.domain.Days;
+import com.orangeandbronze.schoolreg.domain.Period;
 import com.orangeandbronze.schoolreg.domain.Schedule;
 import com.orangeandbronze.schoolreg.domain.Section;
 import com.orangeandbronze.schoolreg.service.CreateSectionService;
@@ -34,15 +36,20 @@ public class NewSection extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		Section section = null;
-		Schedule schedule = null;
-		
+				
 		String sectionName = request.getParameter("sectionName");
-		String faculty = request.getParameter("teacher");
+		Integer faculty = Integer.parseInt(request.getParameter("teacher"));
 		String subject = request.getParameter("subject");
 		String days = request.getParameter("days");
 		String period = request.getParameter("period");
-		
-//		section = service.createSection(sectionName, subject, Schedule, faculty);
+		String schedule = days + " " + period;
+
+		try {
+			section = service.createSection(sectionName, subject, schedule, faculty);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();

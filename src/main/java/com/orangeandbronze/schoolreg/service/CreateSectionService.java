@@ -1,5 +1,6 @@
 package com.orangeandbronze.schoolreg.service;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -44,7 +45,8 @@ public class CreateSectionService {
 		return period;
 	}
 
-//	public void createSection () {
-//		sectionDao.createSection(sectionsectionNumber, subject, schedule, faculty)
-//	}
+	public Section createSection(String sectionName, String subject, String schedule, int faculty) throws SQLException {
+		sectionDao.checkIfExists(sectionName, subject, schedule, faculty);
+		return null;
+	}
 }
